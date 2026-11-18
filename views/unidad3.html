@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 - Sistemas Lineales</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .input-group { margin-bottom: 15px; }
+        .input-group label { font-weight: bold; display: block; margin-bottom: 5px; }
+        .input-group input, select { padding: 8px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+        .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; max-width: 500px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="btn-volver">← Volver al Menú</a>
+        <h1>Unidad 3: Sistemas de Ecuaciones Lineales</h1>
+    </header>
+
+    <div class="container">
+        <h2>Resolución de Sistemas</h2>
+        
+        <div class="input-group">
+            <label>Selecciona el Método:</label>
+            <select id="metodo-u3" onchange="cambiarDescripcion()">
+                <option value="gauss_jordan">Método de Gauss-Jordan</option>
+                <option value="gauss_seidel">Método de Gauss-Seidel</option>
+                <option value="jacobi">Método de Jacobi</option>
+            </select>
+        </div>
+        
+        <!-- Descripción dinámica requerida en rúbrica -->
+        <p id="desc-metodo" style="font-style: italic; color: #555; background: #eef2f5; padding: 10px; border-left: 3px solid var(--azul-unam);">
+            Explicación: Reduce la matriz a la matriz identidad usando operaciones elementales (método directo).
+        </p>
+
+        <!-- Estos campos solo se muestran si el método es iterativo -->
+        <div class="config-grid" id="config-iterativos" style="display:none;">
+            <div>
+                <label>Tolerancia (Error deseado):</label>
+                <input type="number" id="tol_u3" step="any" value="0.001">
+            </div>
+            <div>
+                <label>Iteraciones máximas:</label>
+                <input type="number" id="iter_u3" value="50">
+            </div>
+        </div>
+
+        <p>Ingresa el tamaño del sistema (n):</p>
+        <input type="number" id="tamano" min="2" max="10" value="3" style="padding: 8px; width: 60px;">
+        <button onclick="generarMatrizUI()">Generar Cajas de Texto</button>
+
+        <div id="contenedor-matriz"></div>
+        
+        <!-- El botón ahora ejecuta una función puente que decide qué método matemático usar -->
+        <button id="btn-resolver" style="display:none;" onclick="ejecutarMetodo()">Resolver Sistema</button>
+        
+        <div id="resultados"></div>
+    </div>
+
+    <script src="../js/unidad3.js"></script>
+</body>
+</html>

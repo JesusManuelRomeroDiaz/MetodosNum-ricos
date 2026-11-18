@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 - Ecuaciones No Lineales</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .input-group { margin-bottom: 15px; }
+        .input-group label { font-weight: bold; display: block; margin-bottom: 5px; }
+        .input-group input, select { padding: 8px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
+<body>
+    <header>
+        <a href="../index.html" class="btn-volver">← Volver al Menú</a>
+        <h1>Unidad 2: Ecuaciones No Lineales</h1>
+    </header>
+
+    <div class="container">
+        <h2>Configuración del Método</h2>
+        
+        <div class="input-group">
+            <label>Selecciona el Método:</label>
+            <select id="metodo-u2" onchange="cambiarDescripcionU2()">
+                <option value="biseccion">Método de Bisección</option>
+                <option value="newton">Método de Newton</option>
+                <option value="secante">Método de la Secante</option>
+            </select>
+            <p id="desc-metodo-u2" style="font-style: italic; color: #555; background: #eef2f5; padding: 10px; border-left: 3px solid var(--azul-unam); margin-top: 10px;">
+                Explicación: Encuentra raíces dividiendo el intervalo a la mitad iterativamente.
+            </p>
+        </div>
+
+        <div class="input-group" style="margin-bottom: 20px;">
+            <label style="font-weight: bold; color: var(--azul-unam);">Ingresa la función f(x):</label>
+            <input type="text" id="funcion_input" value="x^2 - e^x - 3*x + 2" placeholder="Ej: x^2 - e^x - 3*x + 2" style="font-size: 16px;">
+            <small style="color: #666; display: block; margin-top: 5px;">
+                Sintaxis permitida: <code>x^2</code>, <code>e^x</code>, <code>sin(x)</code>, <code>3*x</code> (usa siempre el asterisco para multiplicaciones).
+            </small>
+        </div>
+
+        <div class="menu" style="margin-top: 20px;">
+            <div class="input-group">
+                <label>Límite inferior (a) / Valor Inicial (x0):</label>
+                <input type="number" id="val_a" step="any" placeholder="Ej: 2">
+            </div>
+            <div class="input-group">
+                <label>Límite superior (b) / Valor (x1):</label>
+                <input type="number" id="val_b" step="any" placeholder="Ej: 3">
+            </div>
+            <div class="input-group">
+                <label>Tolerancia (Error deseado):</label>
+                <input type="number" id="tol_u2" step="any" value="0.001">
+            </div>
+            <div class="input-group">
+                <label>Iteraciones máximas:</label>
+                <input type="number" id="iter_u2" value="50">
+            </div>
+        </div>
+
+        <button onclick="ejecutarUnidad2()">Calcular Raíz</button>
+        
+        <div id="resultados-u2"></div>
+    </div>
+
+    <script src="../js/unidad2.js"></script>
+</body>
+</html>

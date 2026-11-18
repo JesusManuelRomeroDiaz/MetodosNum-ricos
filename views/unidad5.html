@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 5 - Valores Propios</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .config-grid input { padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="btn-volver">← Volver al Menú</a>
+        <h1>Unidad 5: Valores y Vectores Propios</h1>
+    </header>
+
+    <div class="container">
+        <h2>Cálculo del Valor Propio Dominante</h2>
+
+        <div style="margin-bottom: 20px;">
+            <label style="font-weight: bold;">Selecciona el Método:</label><br>
+            <select id="metodo-u5" onchange="cambiarDescripcionU5()" style="padding: 8px; width: 300px; margin-top: 5px;">
+                <option value="potencia">Potencia (Valor Propio Máximo)</option>
+                <option value="potencia_inversa">Potencia Inversa (Valor Propio Mínimo)</option>
+            </select>
+            <p id="desc-metodo-u5" style="font-style: italic; color: #555; background: #eef2f5; padding: 10px; border-left: 3px solid var(--azul-unam); margin-top: 10px;">
+                Explicación: Encuentra el valor propio dominante (máximo) y su vector propio.
+            </p>
+        </div>
+
+        <div class="config-grid">
+            <div>
+                <label style="font-weight: bold;">Tolerancia:</label>
+                <input type="number" id="tol_u5" step="any" value="0.001">
+            </div>
+            <div>
+                <label style="font-weight: bold;">Iteraciones máximas:</label>
+                <input type="number" id="iter_u5" value="50">
+            </div>
+        </div>
+
+        <p>Ingresa el tamaño de la matriz (n):</p>
+        <input type="number" id="tamano_u5" min="2" max="10" value="3" style="padding: 8px; width: 60px;">
+        <button onclick="generarMatrizPotencia()">Generar Matriz y Vector Inicial</button>
+
+        <div id="contenedor-matriz"></div>
+        
+        <button id="btn-resolver-u5" style="display:none;" onclick="ejecutarPotencia()">Calcular Valor Propio</button>
+        
+        <div id="resultados-u5"></div>
+    </div>
+
+    <script src="logica_oop.js"></script>
+</body>
+</html>

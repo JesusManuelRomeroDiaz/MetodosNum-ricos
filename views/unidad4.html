@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 - Factorización LU</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="btn-volver">← Volver al Menú</a>
+        <h1>Unidad 4: Factorización LU</h1>
+    </header>
+
+    <div class="container">
+        <h2>Descomposición de Matrices</h2>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="font-weight: bold;">Selecciona el Método:</label><br>
+            <select id="metodo-u4" onchange="cambiarDescripcionU4()" style="padding: 8px; width: 200px; margin-top: 5px;">
+                <option value="doolittle">Método de Doolittle</option>
+                <option value="crout">Método de Crout</option>
+            </select>
+            <p id="desc-metodo-u4" style="font-style: italic; color: #555; background: #eef2f5; padding: 10px; border-left: 3px solid var(--azul-unam); margin-top: 10px;">
+                Explicación: Descompone la matriz A en LU donde la diagonal principal de L son unos (1).
+            </p>
+        </div>
+
+        <p>Ingresa el tamaño de la matriz cuadrada (n):</p>
+        <input type="number" id="tamano_u4" min="2" max="10" value="3" style="padding: 8px; width: 60px;">
+        <button onclick="generarMatrizLU()">Generar Cajas de Texto</button>
+
+        <div id="contenedor-matriz"></div>
+        
+        <button id="btn-resolver-u4" style="display:none;" onclick="ejecutarFactorizacionLU()">Factorizar Matriz (LU)</button>
+        
+        <div id="resultados-u4"></div>
+    </div>
+
+    <script src="../js/unidad4.js"></script>
+</body>
+</html>
