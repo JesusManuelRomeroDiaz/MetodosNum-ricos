@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unidad 5: Valores y Vectores Propios</title>
-    
-    <!-- Ruta al archivo de estilos (subiendo un nivel si este archivo está en la carpeta 'views') -->
     <link rel="stylesheet" href="../style.css">
     
-    <!-- Librería Math.js necesaria para las fracciones y la matriz inversa -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
 </head>
 <body>
@@ -17,7 +14,21 @@
         <a href="../index.html" class="btn-volver">← Volver al Menú</a>
         <h1>Unidad 5: Valores y Vectores Propios</h1>
     </header>
-
+    
+    <div class="container">
+        <h2>Resumen de los Métodos</h2>
+        <div class="resumen-grid">
+            <div class="tarjeta-metodo">
+                <h3>Método de la Potencia</h3>
+                <p>Aproxima el valor propio dominante (de mayor magnitud) y su vector propio asociado multiplicando repetidamente la matriz A por un vector inicial propuesto y normalizando el resultado con su componente dominante en cada iteración.</p>
+            </div>
+            <div class="tarjeta-metodo">
+                <h3>Método de la Potencia Inversa</h3>
+                <p>Calcula el valor propio de menor magnitud aplicando el algoritmo de la potencia sobre la matriz inversa B = A⁻¹. Al converger a una constante c, el valor propio mínimo se obtiene como λ = 1/c junto con su vector propio.</p>
+            </div>
+        </div>
+    </div>
+    
     <div class="container">
         <h2>Cálculo de Valores y Vectores Propios</h2>
         
@@ -31,7 +42,6 @@
             Explicación: Encuentra el valor propio dominante (máximo) y su vector propio correspondiente iterando sobre A.
         </p>
 
-        <!-- Parámetros de Tolerancia e Iteraciones -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
             <div>
                 <label>Tolerancia:</label>
@@ -43,25 +53,19 @@
             </div>
         </div>
 
-        <!-- Tamaño de matriz y botón generador -->
         <p style="margin-bottom: 5px;">Ingresa el tamaño de la matriz (n):</p>
         <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 20px;">
             <input type="number" id="tamano_u5" min="2" max="10" value="3" style="padding: 8px; width: 60px;">
             <button onclick="generarMatrizVector()">Generar Matriz y Vector Inicial</button>
         </div>
 
-        <!-- Aquí se inyectarán las cajas de texto de la matriz y el vector -->
         <div id="contenedor-matriz"></div>
 
-        <!-- Botón para resolver (oculto hasta que se genera la matriz) -->
         <button id="btn-resolver-u5" onclick="ejecutarValoresPropios()" style="display: none; margin-top: 20px; width: 100%;">Resolver Sistema</button>
 
-        <!-- Aquí se inyectarán los resultados -->
         <div id="resultados-u5"></div>
     </div>
 
-    <!-- Enlace a la lógica del programa -->
-    <!-- NOTA: Si tienes tu archivo js guardado en la misma carpeta que el html, cámbialo a src="unidad5.js" -->
     <script src="../js/unidad5.js"></script>
 </body>
 </html>

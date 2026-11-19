@@ -19,6 +19,24 @@
     </header>
 
     <div class="container">
+        <h2>Resumen de los Métodos</h2>
+        <div class="resumen-grid">
+            <div class="tarjeta-metodo">
+                <h3>Método de Bisección</h3>
+                <p>Busca una raíz dentro de un intervalo cerrado [a, b] donde exista cambio de signo. En cada iteración divide el intervalo a la mitad y conserva el subintervalo que contiene la raíz hasta cumplir la tolerancia.</p>
+            </div>
+            <div class="tarjeta-metodo">
+                <h3>Método de Newton-Raphson</h3>
+                <p>Parte de un valor inicial x₀ y utiliza la recta tangente (calculada mediante la derivada f'(x)) para aproximar la raíz. Ofrece una convergencia muy rápida si el punto inicial está cerca de la solución y la derivada no se anula.</p>
+            </div>
+            <div class="tarjeta-metodo">
+                <h3>Método de la Secante</h3>
+                <p>Es una variante de Newton que evita calcular la derivada analítica. Utiliza dos puntos iniciales para trazar una recta secante y tomar su intersección con el eje horizontal como la nueva aproximación.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
         <h2>Configuración del Método</h2>
         
         <div class="input-group">

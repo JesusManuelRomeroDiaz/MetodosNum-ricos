@@ -179,3 +179,48 @@ header h1 {
         padding: 0; 
     }
 }
+
+.referencias {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.referencias li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: #f9fbfc;
+    border-left: 4px solid var(--oro-unam);
+    border-radius: 4px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.resumen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.tarjeta-metodo {
+    background-color: #f9fbfc;
+    border: 1px solid #dde4ea;
+    border-top: 4px solid var(--azul-unam);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.tarjeta-metodo h3 {
+    color: var(--azul-unam);
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.tarjeta-metodo p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444;
+}
